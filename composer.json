@@ -1,0 +1,41 @@
+{
+    "name": "kumaxim/wordpress-base",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Maxim Kudryavtsev",
+            "email": "kumaxim@users.noreply.github.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        },
+        {
+        	"type": "package",
+        	"package": {
+        		"name": "wordpress/wordpress",
+                "type": "wordpress-core",
+        		"version": "5.1",
+        		"source": {
+        			"type": "git",
+        			"url": "https://github.com/WordPress/wordpress.git",
+                    "reference": "5.1"
+        		},
+                "require": {
+                    "johnpbloch/wordpress-core-installer": "^1.0"
+                }
+        	}
+        }
+  	],
+    "require": {
+		"wordpress/wordpress": "^5.1",
+        "wpackagist-plugin/query-monitor": "^3.3"
+    },
+    "extra": {
+        "installer-paths": {
+            "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    }
+}
